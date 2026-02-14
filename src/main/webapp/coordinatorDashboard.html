@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coordinator Dashboard | Placement Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#195de6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<div class="flex h-full min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-white dark:bg-background-dark border-r border-[#dcdfe5] dark:border-gray-800 flex flex-col h-screen sticky top-0">
+<div class="flex flex-col gap-8 p-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">school</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111318] dark:text-white text-base font-bold leading-normal">Placement Portal</h1>
+<p class="text-[#636f88] dark:text-gray-400 text-xs font-medium leading-normal">Coordinator Admin</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#636f88] dark:text-gray-400 hover:bg-background-light dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<p class="text-sm font-semibold">Overview</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#636f88] dark:text-gray-400 hover:bg-background-light dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<p class="text-sm font-semibold">Student Records</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">work</span>
+<p class="text-sm font-bold">Job Approvals</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#636f88] dark:text-gray-400 hover:bg-background-light dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">analytics</span>
+<p class="text-sm font-semibold">Application Tracking</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#636f88] dark:text-gray-400 hover:bg-background-light dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<p class="text-sm font-semibold">System Settings</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-[#dcdfe5] dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="Coordinator profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzkzxCXncE7uJArNuwAwV17v0ekirEy8w1uF_1osougMw_05aJlQMaJxsqT87wvMdfRL5wDe1d-PCHRM6fJOFfhM01p952h1qi0c3XXitzNsHj6H4Ff-9QPifEIPNdcFmroZPSrkYQVmPSR6bYJVZWudX2pzAe5ez_uoY81wyrUdgGzvlnBzRusXbkRkYBH3jUzcLQ1vtr6sutIk-OVBAXs0jll6FDDPuaVsH92HsoUvKqX5HxcbhGzKjWTqiBczxyIfNRYmH4cmQ')"></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-[#111318] dark:text-white">Dr. Sarah Chen</p>
+<p class="text-xs text-[#636f88] dark:text-gray-400">Chief Coordinator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto">
+<header class="h-16 bg-white dark:bg-background-dark border-b border-[#dcdfe5] dark:border-gray-800 px-8 flex items-center justify-between sticky top-0 z-10">
+<h2 class="text-lg font-bold text-[#111318] dark:text-white">Coordinator Dashboard</h2>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-background-light dark:hover:bg-gray-800 text-[#636f88] dark:text-gray-400">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                        New Job Posting
+                    </button>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Stats Section -->
+<div class="flex flex-wrap gap-4">
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dcdfe5] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500">pending_actions</span>
+<p class="text-[#636f88] dark:text-gray-400 text-sm font-medium leading-normal">Pending Approvals</p>
+</div>
+<p class="text-[#111318] dark:text-white tracking-light text-3xl font-bold leading-tight mt-1">12</p>
+</div>
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dcdfe5] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">groups</span>
+<p class="text-[#636f88] dark:text-gray-400 text-sm font-medium leading-normal">Total Students</p>
+</div>
+<p class="text-[#111318] dark:text-white tracking-light text-3xl font-bold leading-tight mt-1">1,240</p>
+</div>
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dcdfe5] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+<p class="text-[#636f88] dark:text-gray-400 text-sm font-medium leading-normal">Placed This Season</p>
+</div>
+<p class="text-[#111318] dark:text-white tracking-light text-3xl font-bold leading-tight mt-1">456</p>
+</div>
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dcdfe5] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500">campaign</span>
+<p class="text-[#636f88] dark:text-gray-400 text-sm font-medium leading-normal">Active Jobs</p>
+</div>
+<p class="text-[#111318] dark:text-white tracking-light text-3xl font-bold leading-tight mt-1">45</p>
+</div>
+</div>
+<!-- Job Openings for Approval -->
+<section class="flex flex-col">
+<div class="flex items-center justify-between mb-4 px-2">
+<h2 class="text-[#111318] dark:text-white text-[22px] font-bold leading-tight tracking-tight">Job Openings for Approval</h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View all requests</a>
+</div>
+<div class="overflow-hidden rounded-xl border border-[#dcdfe5] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm @container">
+<table class="w-full text-left">
+<thead class="bg-background-light dark:bg-gray-800/50">
+<tr>
+<th class="px-6 py-4 text-[#111318] dark:text-white text-sm font-bold">Company</th>
+<th class="px-6 py-4 text-[#111318] dark:text-white text-sm font-bold">Role</th>
+<th class="px-6 py-4 text-[#111318] dark:text-white text-sm font-bold">Salary</th>
+<th class="px-6 py-4 text-[#111318] dark:text-white text-sm font-bold">Deadline</th>
+<th class="px-6 py-4 text-right text-[#111318] dark:text-white text-sm font-bold">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dcdfe5] dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-gray-100 flex items-center justify-center font-bold text-xs">G</div>
+<span class="text-[#111318] dark:text-white font-medium">Google</span>
+</div>
+</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">Software Engineer</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">$120k</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">2023-12-01</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition-colors">Approve</button>
+<button class="px-4 py-1.5 border border-red-200 text-red-600 text-xs font-bold rounded-lg hover:bg-red-50 transition-colors">Reject</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-gray-100 flex items-center justify-center font-bold text-xs">M</div>
+<span class="text-[#111318] dark:text-white font-medium">Meta</span>
+</div>
+</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">Product Designer</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">$110k</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">2023-11-28</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition-colors">Approve</button>
+<button class="px-4 py-1.5 border border-red-200 text-red-600 text-xs font-bold rounded-lg hover:bg-red-50 transition-colors">Reject</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-gray-100 flex items-center justify-center font-bold text-xs">A</div>
+<span class="text-[#111318] dark:text-white font-medium">Amazon</span>
+</div>
+</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">Cloud Architect</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">$130k</td>
+<td class="px-6 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">2023-12-15</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition-colors">Approve</button>
+<button class="px-4 py-1.5 border border-red-200 text-red-600 text-xs font-bold rounded-lg hover:bg-red-50 transition-colors">Reject</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Two Column Layout: Student Filters & Application Master List -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Student Directory Filter -->
+<div class="lg:col-span-1 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<h2 class="text-[#111318] dark:text-white text-lg font-bold">Student Directory</h2>
+</div>
+<div class="bg-white dark:bg-background-dark border border-[#dcdfe5] dark:border-gray-800 rounded-xl p-5 shadow-sm">
+<div class="flex flex-col gap-4">
+<div>
+<label class="text-xs font-bold text-[#636f88] dark:text-gray-400 uppercase tracking-wider">Search Name</label>
+<div class="relative mt-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 border border-[#dcdfe5] dark:border-gray-800 rounded-lg bg-background-light dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary" placeholder="Search students..." type="text"/>
+</div>
+</div>
+<div>
+<label class="text-xs font-bold text-[#636f88] dark:text-gray-400 uppercase tracking-wider">Filter by Program</label>
+<div class="flex flex-col gap-2 mt-2">
+<button class="flex items-center justify-between px-3 py-2 rounded-lg bg-primary/5 text-primary text-sm font-bold border border-primary/20">
+                                            Computer Science
+                                            <span class="text-xs font-medium px-2 py-0.5 bg-primary/10 rounded-full">450</span>
+</button>
+<button class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#636f88] dark:text-gray-400 text-sm font-medium transition-colors">
+                                            Information Tech
+                                            <span class="text-xs font-medium px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-full">320</span>
+</button>
+<button class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#636f88] dark:text-gray-400 text-sm font-medium transition-colors">
+                                            Electronics &amp; Comm
+                                            <span class="text-xs font-medium px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-full">280</span>
+</button>
+<button class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#636f88] dark:text-gray-400 text-sm font-medium transition-colors">
+                                            Mechanical Eng
+                                            <span class="text-xs font-medium px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-full">190</span>
+</button>
+</div>
+</div>
+<button class="w-full mt-2 py-2 text-primary font-bold text-sm border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">
+                                    Apply All Filters
+                                </button>
+</div>
+</div>
+</div>
+<!-- Master Application List -->
+<div class="lg:col-span-2 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<h2 class="text-[#111318] dark:text-white text-lg font-bold">Application Master List</h2>
+<div class="flex gap-2">
+<button class="p-2 border border-[#dcdfe5] dark:border-gray-800 rounded-lg text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-xl">file_download</span>
+</button>
+<button class="p-2 border border-[#dcdfe5] dark:border-gray-800 rounded-lg text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-xl">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-hidden rounded-xl border border-[#dcdfe5] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm @container">
+<table class="w-full text-left">
+<thead class="bg-background-light dark:bg-gray-800/50">
+<tr>
+<th class="px-5 py-4 text-[#111318] dark:text-white text-xs font-bold uppercase tracking-wider">Student</th>
+<th class="px-5 py-4 text-[#111318] dark:text-white text-xs font-bold uppercase tracking-wider">Company</th>
+<th class="px-5 py-4 text-[#111318] dark:text-white text-xs font-bold uppercase tracking-wider">Status</th>
+<th class="px-5 py-4 text-right text-[#111318] dark:text-white text-xs font-bold uppercase tracking-wider">Last Activity</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dcdfe5] dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 transition-colors">
+<td class="px-5 py-4">
+<div class="flex flex-col">
+<span class="text-[#111318] dark:text-white text-sm font-bold">Alex Johnson</span>
+<span class="text-[#636f88] dark:text-gray-400 text-xs">CS - Batch 2024</span>
+</div>
+</td>
+<td class="px-5 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">Microsoft</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                                                Shortlisted
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right text-[#636f88] dark:text-gray-400 text-xs font-medium">2 hours ago</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 transition-colors">
+<td class="px-5 py-4">
+<div class="flex flex-col">
+<span class="text-[#111318] dark:text-white text-sm font-bold">Maria Garcia</span>
+<span class="text-[#636f88] dark:text-gray-400 text-xs">IT - Batch 2024</span>
+</div>
+</td>
+<td class="px-5 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">Salesforce</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+                                                Applied
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right text-[#636f88] dark:text-gray-400 text-xs font-medium">Yesterday</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 transition-colors">
+<td class="px-5 py-4">
+<div class="flex flex-col">
+<span class="text-[#111318] dark:text-white text-sm font-bold">Robert Wilson</span>
+<span class="text-[#636f88] dark:text-gray-400 text-xs">ECE - Batch 2024</span>
+</div>
+</td>
+<td class="px-5 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">Intel</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">
+                                                Interviewing
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right text-[#636f88] dark:text-gray-400 text-xs font-medium">Oct 12, 2023</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/20 transition-colors">
+<td class="px-5 py-4">
+<div class="flex flex-col">
+<span class="text-[#111318] dark:text-white text-sm font-bold">Priya Sharma</span>
+<span class="text-[#636f88] dark:text-gray-400 text-xs">CS - Batch 2024</span>
+</div>
+</td>
+<td class="px-5 py-4 text-[#636f88] dark:text-gray-400 text-sm font-medium">Adobe</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                                                Placed
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right text-[#636f88] dark:text-gray-400 text-xs font-medium">Oct 10, 2023</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 border-t border-[#dcdfe5] dark:border-gray-800 flex items-center justify-between">
+<span class="text-xs text-[#636f88] dark:text-gray-400">Showing 4 of 2,450 applications</span>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 text-xs font-bold border border-[#dcdfe5] dark:border-gray-800 rounded-lg hover:bg-gray-50">Previous</button>
+<button class="px-3 py-1.5 text-xs font-bold border border-[#dcdfe5] dark:border-gray-800 rounded-lg hover:bg-gray-50">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,180 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!doctype html>
+
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Student Login - Campus Placement Portal</title>
+<script
+	src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+	rel="stylesheet" />
+<script id="tailwind-config">
+	tailwind.config = {
+		darkMode : "class",
+		theme : {
+			extend : {
+				colors : {
+					primary : "#3b19e6",
+					"background-light" : "#f6f6f8",
+					"background-dark" : "#141121",
+				},
+				fontFamily : {
+					display : [ "Manrope", "sans-serif" ],
+				},
+				borderRadius : {
+					DEFAULT : "0.25rem",
+					lg : "0.5rem",
+					xl : "0.75rem",
+					full : "9999px",
+				},
+			},
+		},
+	};
+</script>
+<style>
+body {
+	font-family: "Manrope", sans-serif;
+}
+
+.campus-pattern {
+	background-color: #f6f6f8;
+	background-image: radial-gradient(#3b19e608 2px, transparent 2px);
+	background-size: 32px 32px;
+}
+
+.dark .campus-pattern {
+	background-color: #141121;
+	background-image: radial-gradient(#ffffff05 1px, transparent 1px);
+}
+</style>
+</head>
+<body
+	class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col campus-pattern">
+	<!-- Navigation -->
+	<header
+		class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-10 py-3 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+		<div class="flex items-center gap-3 text-primary">
+			<div class="size-8">
+				<svg fill="currentColor" viewbox="0 0 48 48"
+					xmlns="http://www.w3.org/2000/svg">
+            <path
+						d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"></path>
+          </svg>
+			</div>
+			<h2
+				class="text-[#121118] dark:text-white text-lg font-extrabold leading-tight tracking-tight">
+				Placement Portal</h2>
+		</div>
+		<div class="flex items-center gap-4">
+			<button
+				class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary/5 dark:bg-primary/20 text-primary text-sm font-bold transition-all hover:bg-primary/10">
+				<span class="truncate">Support</span>
+			</button>
+		</div>
+	</header>
+
+	<main class="flex-1 flex items-center justify-center p-6">
+		<div class="w-full max-w-[480px] space-y-6">
+
+			<!-- Branding/Heading -->
+			<div class="text-center space-y-2">
+				<h1
+					class="text-[#121118] dark:text-white tracking-tight text-3xl font-extrabold leading-tight">
+					Welcome Back, Student</h1>
+				<p class="text-[#696388] dark:text-gray-400 text-sm font-medium">
+					Access your career opportunities and track applications</p>
+			</div>
+
+			<!-- Login Card -->
+			<div
+				class="bg-white dark:bg-[#1c1a2b] shadow-xl shadow-primary/5 rounded-xl border border-primary/10 p-8">
+
+				<!-- ✅ JSP ERROR MESSAGE (ONLY ADDITION) -->
+				<%
+					if ("1".equals(request.getParameter("error"))) {
+				%>
+				<div class="mb-4 p-3 rounded-lg bg-red-100 text-red-700 text-sm font-semibold">
+					Invalid Student ID or Password. Please try again.
+				</div>
+				<%
+					}
+				%>
+
+				<form class="space-y-5" action="LoginHandler" method="POST">
+					<input type="hidden" name="role" value="student">
+
+					<!-- Student ID Field -->
+					<div class="space-y-2">
+						<label
+							class="block text-[#121118] dark:text-gray-200 text-sm font-bold leading-normal">
+							Student ID or Institutional Email </label>
+						<div class="relative">
+							<span
+								class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">person</span>
+							<input
+								class="form-input flex w-full rounded-lg text-[#121118] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50 focus:border-primary h-12 pl-12 pr-4 placeholder:text-gray-400 text-base font-normal"
+								placeholder="e.g. 2024CS101 or name@university.edu" type="text"
+								name="uname" />
+						</div>
+					</div>
+
+					<!-- Password Field -->
+					<div class="space-y-2">
+						<div class="flex justify-between items-center">
+							<label
+								class="block text-[#121118] dark:text-gray-200 text-sm font-bold leading-normal">
+								Password </label>
+						</div>
+						<div class="relative">
+							<span
+								class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">lock</span>
+							<input
+								class="form-input flex w-full rounded-lg text-[#121118] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50 focus:border-primary h-12 pl-12 pr-4 placeholder:text-gray-400 text-base font-normal"
+								placeholder="••••••••" type="password" name="upass" />
+						</div>
+					</div>
+
+					<div class="pt-2 space-y-3">
+						<button
+							class="w-full h-12 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 group shadow-lg shadow-primary/20"
+							type="submit">
+							<span>Sign In to Portal</span>
+							<span
+								class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+						</button>
+					</div>
+				</form>
+
+				<a href="index.html">
+					<button
+						class="mt-3 w-full h-12 bg-transparent border border-gray-200 dark:border-gray-700 text-[#121118] dark:text-white font-bold rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all flex items-center justify-center gap-2"
+						type="button">
+						<span class="material-symbols-outlined text-[18px]">keyboard_backspace</span>
+						<span>Back to Role Selection</span>
+					</button>
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<footer
+		class="py-6 px-10 border-t border-primary/5 bg-white/50 dark:bg-background-dark/50">
+		<div
+			class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+			<p class="text-xs text-[#696388] dark:text-gray-500">© 2024
+				Campus Placement Portal. All rights reserved.</p>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Company Login - Campus Placement Portal</title>
+<script
+	src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+	rel="stylesheet" />
+<script id="tailwind-config">
+	tailwind.config = {
+		darkMode : "class",
+		theme : {
+			extend : {
+				colors : {
+					"primary" : "#195de6",
+					"background-light" : "#f6f6f8",
+					"background-dark" : "#111621",
+				},
+				fontFamily : {
+					"display" : [ "Manrope", "sans-serif" ]
+				},
+				borderRadius : {
+					"DEFAULT" : "0.25rem",
+					"lg" : "0.5rem",
+					"xl" : "0.75rem",
+					"full" : "9999px"
+				},
+			},
+		},
+	}
+</script>
+<style>
+body {
+	font-family: 'Manrope', sans-serif;
+}
+
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+	<div class="flex min-h-screen w-full">
+		<!-- Visual Section (Split Screen Left) -->
+		<div
+			class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-primary">
+			<div class="absolute inset-0 z-10 bg-primary/40 mix-blend-multiply"></div>
+			<div
+				class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
+				data-alt="Modern minimalist office interior with glass walls"
+				style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwbB3PYPOHFg_c46iGMh_J0PQIFgdOBtRsCqdws5kPensQvj5JCSwk1apDS_9UTmEHcGKMfGFurG5zxm8Hq3-809ii5fDCYtiE9847e5LiYh0yFSDz2RYLZmnrCFxHRQ-ES5oTwBTQGiaWmSeERfXFC-aqZyMgOtVRQS9xqqc10l61Oqmn2kkhvrYeibX-sMpudAC_fq3Li5xW_Vj5gis5l11QdNrM3Unw_cHIAqAP_mOcCB1saYaBpnK0oUFcUnl8_SHotzddCng");'>
+			</div>
+			<div
+				class="relative z-20 flex flex-col justify-between p-12 text-white w-full">
+				<div class="flex items-center gap-3">
+					<div class="bg-white p-2 rounded-lg">
+						<svg class="size-6 text-primary" fill="none" viewbox="0 0 48 48"
+							xmlns="http://www.w3.org/2000/svg">
+<path
+								d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+								fill="currentColor"></path>
+</svg>
+					</div>
+					<span class="text-xl font-extrabold tracking-tight">CampusHire</span>
+				</div>
+				<div class="max-w-md">
+					<h1 class="text-5xl font-extrabold leading-tight mb-6">Find
+						your next generation of talent.</h1>
+					<p class="text-lg text-white/90 font-medium leading-relaxed">
+						Join over 500+ global organizations connecting with top-tier
+						graduates through our streamlined placement ecosystem.</p>
+				</div>
+				<div
+					class="flex gap-4 items-center text-sm font-medium text-white/80">
+					<span class="flex items-center gap-1"><span
+						class="material-symbols-outlined text-sm">verified</span> Verified
+						Partners</span> <span class="h-1 w-1 rounded-full bg-white/40"></span> <span
+						class="flex items-center gap-1"><span
+						class="material-symbols-outlined text-sm">rocket_launch</span>
+						Rapid Hiring</span>
+				</div>
+			</div>
+		</div>
+		<!-- Form Section (Split Screen Right) -->
+		<div
+			class="w-full lg:w-1/2 flex flex-col justify-center items-center p-8 lg:p-16 bg-white dark:bg-background-dark">
+			<div class="w-full max-w-[440px]">
+				<!-- Mobile Branding -->
+				<div class="flex lg:hidden items-center gap-3 mb-12">
+					<div class="bg-primary p-2 rounded-lg">
+						<svg class="size-6 text-white" fill="none" viewbox="0 0 48 48"
+							xmlns="http://www.w3.org/2000/svg">
+<path
+								d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+								fill="currentColor"></path>
+</svg>
+					</div>
+					<span
+						class="text-xl font-extrabold tracking-tight text-[#111318] dark:text-white">CampusHire</span>
+				</div>
+				<div class="mb-10">
+					<h2
+						class="text-[#111318] dark:text-white text-3xl font-extrabold leading-tight tracking-[-0.015em] mb-2">Company
+						Login</h2>
+					<p class="text-[#636f88] dark:text-gray-400 text-base font-medium">Sign
+						in to manage your campus recruitment and job applications.</p>
+				</div>
+				<form class="space-y-6" action="LoginHandler" method="POST">
+					<!-- Email Field -->
+					<input type="hidden" name="role" value="company">
+					<div class="flex flex-col gap-2">
+						<label
+							class="text-[#111318] dark:text-white text-sm font-bold leading-normal">Official
+							Company Email</label>
+						<div class="relative">
+							<input
+								class="form-input flex w-full rounded-lg text-[#111318] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#dcdfe5] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#636f88] p-[15px] text-base font-normal transition-all"
+								placeholder="e.g. hr@company.com" type="text" name="uname" />
+						</div>
+					</div>
+					<!-- Password Field -->
+					<div class="flex flex-col gap-2">
+						<div class="flex justify-between items-center">
+							<label
+								class="text-[#111318] dark:text-white text-sm font-bold leading-normal">Password</label>
+							<a class="text-primary text-sm font-bold hover:underline"
+								href="#">Forgot?</a>
+						</div>
+						<div class="flex w-full items-stretch rounded-lg group">
+							<input
+								class="form-input flex w-full min-w-0 flex-1 rounded-lg rounded-r-none border-r-0 text-[#111318] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#dcdfe5] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary h-14 placeholder:text-[#636f88] p-[15px] text-base font-normal transition-all"
+								placeholder="••••••••" type="password" name="upass" />
+							<div
+								class="text-[#636f88] flex border border-[#dcdfe5] dark:border-gray-700 bg-white dark:bg-gray-800 items-center justify-center pr-[15px] rounded-r-lg border-l-0 cursor-pointer hover:text-primary transition-colors">
+								<span class="material-symbols-outlined">visibility</span>
+							</div>
+						</div>
+					</div>
+					<div class="flex items-center gap-2 py-2">
+						<input
+							class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+							id="remember" type="checkbox" /> <label
+							class="text-sm text-[#636f88] dark:text-gray-400 font-medium"
+							for="remember">Remember this device for 30 days</label>
+					</div>
+					<button
+						class="w-full flex items-center justify-center rounded-lg h-14 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
+						type="submit">Company Login</button>
+				</form>
+				<div
+					class="mt-8 pt-8 border-t border-solid border-[#f0f2f4] dark:border-gray-800 text-center">
+					<p class="text-[#636f88] dark:text-gray-400 text-sm font-medium">
+						New to the platform? <a
+							class="text-primary font-bold hover:underline ml-1" href="#">Register
+							your Company</a>
+					</p>
+				</div>
+				<div class="mt-12 flex justify-center gap-6">
+					<a
+						class="text-xs text-[#636f88] dark:text-gray-500 font-medium hover:text-primary transition-colors"
+						href="#">Privacy Policy</a> <a
+						class="text-xs text-[#636f88] dark:text-gray-500 font-medium hover:text-primary transition-colors"
+						href="#">Terms of Service</a> <a
+						class="text-xs text-[#636f88] dark:text-gray-500 font-medium hover:text-primary transition-colors"
+						href="#">Support</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
