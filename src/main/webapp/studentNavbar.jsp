@@ -29,7 +29,7 @@
 				class="text-sm">My Profile</span>
 			</a> <a
 				class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:bg-slate-50 transition-colors"
-				href="#"> <span class="material-symbols-outlined">work</span> <span
+				href="viewJobs"> <span class="material-symbols-outlined">work</span> <span
 				class="text-sm font-medium">Browse Jobs</span>
 			</a> <a
 				class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:bg-slate-50 transition-colors"

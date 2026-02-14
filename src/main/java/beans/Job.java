@@ -12,15 +12,18 @@ public class Job implements Serializable {
 	    private int vacancy;
 	    private String type;
 	    private int openings;
+	    private String status;
+	    private int totalJobOpenings;
 	    
 	    
 	    
+
 
 		public Job() {
 		}
 		
 		public Job(int jobId, int companyId, String role, String description, String fullescription, String location,
-				int vacancy, String type, int openings) {
+				int vacancy, String type, int openings,int totalJobOpenings) {
 			super();
 			this.jobId = jobId;
 			this.companyId = companyId;
@@ -31,6 +34,7 @@ public class Job implements Serializable {
 			this.vacancy = vacancy;
 			this.type = type;
 			this.openings = openings;
+			this.totalJobOpenings = totalJobOpenings;
 		}
 		public int getJobId() {
 			return jobId;
@@ -87,6 +91,23 @@ public class Job implements Serializable {
 			this.openings = openings;
 		}
 
+		public String getStatus() {
+			return status;
+		}
+		
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public int getTotalJobOpenings() {
+			return totalJobOpenings;
+		}
+
+		public void setTotalJobOpenings(int totalJobOpenings) {
+			this.totalJobOpenings = totalJobOpenings;
+		}
+		
+		
 	    // getters & setters
 	    
 }
