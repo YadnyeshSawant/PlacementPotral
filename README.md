@@ -191,15 +191,21 @@ The system uses a relational database (MySQL) with properly structured tables an
 | prn | BIGINT | Linked User PRN |
 
 ---
+<img width="674" height="764" alt="image" src="https://github.com/user-attachments/assets/a14e0465-da68-409a-93f2-4e29772cee46" />
 
-## 🔗 Entity Relationships
+## 📊 ER Diagram Overview
 
-- `student.program_id → program.program_id`
-- `coordinator.program_id → program.program_id`
-- `jobopening.company_id → company.company_id`
-- `applications.student_id → student.student_id`
-- `applications.job_id → jobopening.job_id`
-- `login.prn → student/company/coordinator.prn`
+The system follows a normalized relational database structure.
+
+### Entity Relationships
+
+- Student → Program (Many-to-One)
+- Coordinator → Program (Many-to-One)
+- Company → JobOpening (One-to-Many)
+- Student → Applications (One-to-Many)
+- JobOpening → Applications (One-to-Many)
+
+The `applications` table acts as a junction table resolving the many-to-many relationship between students and job openings.
 
 This ensures proper normalization (3-NF) and relational integrity.
 
@@ -210,20 +216,44 @@ This ensures proper normalization (3-NF) and relational integrity.
 ```
 Campus-Placement-Portal/
 │
-├── src/
-│   ├── controller/        # Servlets
-│   ├── model/             # Java Beans
-│   ├── dao/               # JDBC Data Access Layer
-│   ├── util/              # DB Connection & Utilities
+├── src/main/java/
+│   ├── beans/
+│   │   ├── Company.java
+│   │   ├── Job.java
+│   │   └── Student.java
+│   │
+│   ├── controller/
+│   │   ├── ApplyJob.java
+│   │   ├── EditStudentProfile.java
+│   │   ├── JobServlet.java
+│   │   ├── LoginHandler.java
+│   │   ├── LogoutServlet.java
+│   │   ├── ManageJobs.java
+│   │   ├── RegisterStudent.java
+│   │   ├── StudenProfileServlet.java
+│   │   └── ViewJobsServlet.java
+│   │
+│   ├── dao/
+│   │   ├── JobDAO.java
+│   │   ├── StudentDAO.java
+│   │   └── UserDAO.java
+│   │
+│   └── helper/
+│       └── DBConnection.java
 │
-├── WebContent/
-│   ├── # JSP Views
-
+├── src/main/webapp/
+│   ├── JSP Pages
+│   ├── HTML Pages
+│   ├── Navbar Components
+│   ├── Dashboards
+│   └── WEB-INF/web.xml
 │
-├── WEB-INF/
-│   ├── web.xml
-│
-└── README.md
+└── Libraries (WEB-INF/lib)
+    ├── mysql-connector-j-9.6.0.jar
+    ├── slf4j-api-2.0.9.jar
+    ├── logback-classic-1.4.11.jar
+    ├── logback-core-1.4.11.jar
+    └── lombok.jar
 ```
 
 ---
@@ -339,7 +369,8 @@ Through this project, I gained hands-on experience in:
 
 **Yadnyesh Sawant**  
 MCA Student – MIT World Peace University  
-Java Developer  
+Java Developer
+<a target="_blank" href="https://www.linkedin.com/in/yadnyesh-sawant">LinkedIn Profile -- Yadnyesh Sawant</a>
 
 ---
 
