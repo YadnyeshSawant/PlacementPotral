@@ -7,6 +7,7 @@ import java.sql.SQLException;
 // import org.slf4j.Logger;
 // import org.slf4j.LoggerFactory;
 import beans.Student;
+import helper.DBConnection;
 
 public class StudentDAO {
 
@@ -109,7 +110,7 @@ public class StudentDAO {
 			pstmt.setLong(1, prn);
 
 			ResultSet rs = pstmt.executeQuery();
-			int programId = 0;
+//			int programId = 0;
 			if (rs.next()) {
 				student = new Student();
 

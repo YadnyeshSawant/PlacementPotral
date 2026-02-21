@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import beans.Student;
 import dao.StudentDAO;
@@ -67,7 +68,6 @@ public class LoginHandler extends HttpServlet {
 
 				session.setAttribute("student", student);
 //				response.sendRedirect("studentDashboard.jsp");
-
 				request.getRequestDispatcher("studentDashboard.jsp").forward(request, response);
 			} else if (role.equals("company")) {
 				response.sendRedirect("companyDashboard.jsp");

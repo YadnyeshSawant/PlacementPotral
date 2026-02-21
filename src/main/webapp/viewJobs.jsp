@@ -141,6 +141,10 @@ body {
 										<th
 											class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">Company
 											ID</th>
+
+										<th
+											class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">Company
+											Name</th>
 										<th
 											class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">Role</th>
 										<th
@@ -177,6 +181,14 @@ body {
 												class="text-sm font-bold text-slate-900 dark:text-white truncate">
 
 												<%=job.getCompanyId()%>
+											</p>
+										</td>
+										
+										<td class="px-6 pl-10 py-5">
+											<p
+												class="text-sm font-bold text-slate-900 dark:text-white truncate">
+
+												<%=job.getCompanyName()%>
 											</p>
 										</td>
 

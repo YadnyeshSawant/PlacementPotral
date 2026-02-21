@@ -8,7 +8,10 @@ import java.sql.Statement;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import beans.Application;
 import beans.Job;
+import helper.DBConnection;
 
 public class JobDAO {
 
@@ -61,9 +64,12 @@ public class JobDAO {
 		try {
 
 			Connection con = DBConnection.getConnection();
-			String sql = "SELECT * FROM jobopening " + "WHERE approval_status='Approved' AND status='open' "
-					+ "ORDER BY job_id DESC " + "LIMIT ?, ?";
-
+			String sql = "SELECT j.*, c.name AS company_name "
+			           + "FROM jobopening j "
+			           + "JOIN company c ON j.company_id = c.company_id "
+			           + "WHERE j.approval_status='Approved' AND j.status='open' "
+			           + "ORDER BY j.job_id DESC "
+			           + "LIMIT ?, ?";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, start);
 			pstmt.setInt(2, limit);
@@ -80,6 +86,7 @@ public class JobDAO {
 				Job job = new Job();
 				job.setJobId(rs.getInt("job_id"));
 				job.setCompanyId(rs.getInt("company_id"));
+				job.setCompanyName(rs.getString("company_name"));
 				job.setRole(rs.getString("role"));
 				job.setDescription(rs.getString("description"));
 				job.setVacancy(rs.getInt("vacancy"));
@@ -154,4 +161,7 @@ public class JobDAO {
 
 		return apply;
 	}
+	
+	
+	
 }

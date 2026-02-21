@@ -33,7 +33,7 @@
 				class="text-sm font-medium">Browse Jobs</span>
 			</a> <a
 				class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:bg-slate-50 transition-colors"
-				href="myApplications.jsp"> <span class="material-symbols-outlined">description</span>
+				href="myApplications"> <span class="material-symbols-outlined">description</span>
 				<span class="text-sm font-medium">My Applications</span>
 			</a> <a
 				class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:bg-slate-50 transition-colors"

@@ -3,8 +3,12 @@ import java.io.Serializable;
 
 public class Job implements Serializable {
 
-	    private int jobId;
+	    /**
+	 * 
+	 */
+		private int jobId;
 	    private int companyId;
+	    private String companyName;
 	    private String role;
 	    private String description;
 	    private String fullescription;
@@ -48,6 +52,15 @@ public class Job implements Serializable {
 		public void setCompanyId(int companyId) {
 			this.companyId = companyId;
 		}
+		
+		public String getCompanyName() {
+			return companyName;
+		}
+
+		public void setCompanyName(String companyName) {
+			this.companyName = companyName;
+		}
+
 		public String getRole() {
 			return role;
 		}

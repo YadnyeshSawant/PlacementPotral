@@ -12,11 +12,16 @@
 	<nav class="flex-1 px-4 py-4 space-y-1">
 		<a
 			class="flex items-center gap-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-			href="companyProfile.jsp"> <span class="material-symbols-outlined">business</span>
-			<span class="text-sm font-semibold">Company Profile</span>
+			href="companyDashboard.jsp"> <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">dashboard</span> <span
+			class="text-sm font-semibold">Dashboard</span>
+		</a> <a
+			class="flex items-center gap-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+			href="companyProfile.jsp"> <span
+			class="material-symbols-outlined">business</span> <span
+			class="text-sm font-semibold">Company Profile</span>
 		</a> <a
 			class="flex items-center gap-3 px-3 py-2.5 active-nav rounded-lg transition-colors"
-			href="#"> <span class="material-symbols-outlined">work</span> <span
+			href="manageJobs"> <span class="material-symbols-outlined">work</span> <span
 			class="text-sm font-semibold">Manage Jobs</span>
 		</a> <a
 			class="flex items-center gap-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
@@ -36,8 +41,8 @@
 			<span class="text-sm font-semibold">Settings</span>
 		</a> <a
 			class="flex items-center gap-3 px-3 py-2.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-lg transition-colors"
-			href="logout"> <span class="material-symbols-outlined">logout</span> <span
-			class="text-sm font-semibold">Logout</span>
+			href="logout"> <span class="material-symbols-outlined">logout</span>
+			<span class="text-sm font-semibold">Logout</span>
 		</a>
 	</div>
 </aside>

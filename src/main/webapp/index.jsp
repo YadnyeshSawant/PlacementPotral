@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<title>(JSP Demo)Placement Portal Landing Page</title>
+<title>Placement Portal Landing Page</title>
 <!-- Tailwind CSS -->
 <script
 	src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
